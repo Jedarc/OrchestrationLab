@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrchestrationLab.Api", "src\OrchestrationLab.Api\OrchestrationLab.Api.csproj", "{EF9637EC-2311-49F8-8F2B-2AD20E09B2DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF9637EC-2311-49F8-8F2B-2AD20E09B2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9637EC-2311-49F8-8F2B-2AD20E09B2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9637EC-2311-49F8-8F2B-2AD20E09B2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9637EC-2311-49F8-8F2B-2AD20E09B2DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {103DAFD9-D1E6-49AF-999A-C58675C849F8}
+	EndGlobalSection
+EndGlobal
