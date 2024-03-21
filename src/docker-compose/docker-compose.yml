@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+
+  orchestrationlab.api:
+    image: ${DOCKER_REGISTRY-}orchestrationlabapi
+    build:
+      context: ../../src
+      dockerfile: OrchestrationLab.Api/Dockerfile
+    ports:
+      - 5103:8080
+      - 7045:8081
