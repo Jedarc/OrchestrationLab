@@ -4,7 +4,7 @@ global:
 
 api:
   dashboard: true
-  insecure: true
+  insecure: false
 
 providers:
   docker:
@@ -17,7 +17,7 @@ providers:
     watch: true
 
 log:
-  level: INFO
+  level: DEBUG
   format: common
 
 
