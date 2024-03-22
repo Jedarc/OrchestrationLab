@@ -2,14 +2,33 @@ version: '3.4'
 
 services:
 
+  traefik:
+    image: traefik:v2.11
+    container_name: traefik
+    ports:
+      - 80:80
+      - 8080:8080
+    labels:
+      - "traefik.http.routers.traefik.rule=Host(`traefik.orchestrationlab.localhost`)"
+
   rabbitmq:
-    image: rabbitmq:3-management
+    image: heidiks/rabbitmq-delayed-message-exchange:3.12.10-management
     container_name: rabbitmq
     restart: always
     ports:
       - 5672:5672
       - 15672:15672
-    
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: '1GB'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rabbitmq.rule=Host(`rabbitmq.orchestrationlab.localhost`)"
+      - "traefik.http.services.rabbitmq.loadbalancer.server.port=15672"
+      - "traefik.http.routers.rabbitmq.service=rabbitmq"
+
   orchestrationlab.api:
     image: ${DOCKER_REGISTRY-}orchestrationlabapi
     build:
@@ -18,3 +37,10 @@ services:
     ports:
       - 5103:8080
       - 7045:8081
+    deploy:
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: '1GB'
+    labels:
+      - "traefik.http.routers.orchestrationlab_api.rule=Host(`public.orchestrationlab.localhost`)"

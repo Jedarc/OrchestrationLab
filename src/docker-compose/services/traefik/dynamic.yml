@@ -1,0 +1,6 @@
+http:
+  routers:
+    traefik:
+      rule: "Host(`traefik.orchestrationlab.localhost`)"
+      service: "api@internal"
+  
