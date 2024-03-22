@@ -9,8 +9,10 @@ services:
       - 80:80
       - 8080:8080
     depends_on:
-      - "rabbitmq"
-      - "orchestrationlab.api"
+      rabbitmq:
+        condition: service_healthy
+      orchestrationlab.api:
+        condition: service_started
 
   rabbitmq:
     image: heidiks/rabbitmq-delayed-message-exchange:3.12.10-management
@@ -39,4 +41,5 @@ services:
           cpus: '0.1'
           memory: '1GB'
     depends_on:
-      - "rabbitmq"
+      rabbitmq:
+        condition: service_healthy

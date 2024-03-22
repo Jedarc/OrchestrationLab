@@ -6,7 +6,7 @@
     <DockerPublishLocally>False</DockerPublishLocally>
     <ProjectGuid>6508cc05-a525-4dca-8b83-b0e9d57f3399</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
+    <DockerServiceUrl>http://public-api.orchestrationlab.localhost/swagger</DockerServiceUrl>
     <DockerServiceName>orchestrationlab.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>

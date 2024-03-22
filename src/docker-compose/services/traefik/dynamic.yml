@@ -8,16 +8,16 @@ http:
       rule: "Host(`rabbitmq.orchestrationlab.localhost`)"
       service: "rabbitmq"
 
-    orchestrationlab_api:
+    orchestrationlab.api:
       rule: "Host(`public-api.orchestrationlab.localhost`)"
-      service: "orchestrationlab_api"
+      service: "orchestrationlab.api"
 
   services:
     rabbitmq:
       loadbalancer:
         servers:
           - url: "http://host.docker.internal:15672"
-    orchestrationlab_api:
+    orchestrationlab.api:
       loadbalancer:
         servers:
           - url: "http://host.docker.internal:5103"
